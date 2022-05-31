@@ -9,6 +9,8 @@ async function bootstrap() {
     const express = app.getHttpAdapter().getInstance();
     const views = (0, path_1.join)(__dirname, '..', 'views');
     nunjucks.configure(views, { express });
+    const staticAssets = (0, path_1.join)(__dirname, '..', 'static');
+    app.useStaticAssets(staticAssets);
     await app.listen(3000);
 }
 bootstrap();
